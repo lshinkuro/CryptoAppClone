@@ -81,9 +81,9 @@ extension HomeView {
                 CoinRowsView(coin: item, showHoldingsColumn: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
             }
-        }.cornerRadius(10)
-         .padding(.horizontal)
+        }
          .listStyle(PlainListStyle())
+         .environment(\.defaultMinListRowHeight, 50)
     }
     
     private var portofolioCoinsList: some View {
@@ -92,9 +92,9 @@ extension HomeView {
                 CoinRowsView(coin: item, showHoldingsColumn: false)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
             }
-        }.cornerRadius(10)
-         .padding(.horizontal)
-         .listStyle(PlainListStyle())
+        }
+            .listStyle(PlainListStyle())
+            .environment(\.defaultMinListRowHeight, 50)
     }
 }
 
