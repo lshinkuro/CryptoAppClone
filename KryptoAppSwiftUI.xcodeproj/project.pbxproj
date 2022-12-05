@@ -27,6 +27,7 @@
 		32072E3C293D8EE30060438D /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32072E3B293D8EE30060438D /* CoinImageView.swift */; };
 		32072E3E293D91910060438D /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32072E3D293D91910060438D /* CoinImageService.swift */; };
 		32072E40293D97370060438D /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32072E3F293D97370060438D /* CoinImageViewModel.swift */; };
+		32072E42293DD97C0060438D /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32072E41293DD97C0060438D /* LocalFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		32072E3B293D8EE30060438D /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		32072E3D293D91910060438D /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		32072E3F293D97370060438D /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
+		32072E41293DD97C0060438D /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				32030FAF293CBB6D00AAC2AE /* NetworkingManager.swift */,
+				32072E41293DD97C0060438D /* LocalFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				32030F61293C719E00AAC2AE /* ContentView.swift in Sources */,
 				32030FAA293CA4BB00AAC2AE /* HomeViewModel.swift in Sources */,
 				32030F94293C7A0600AAC2AE /* CircleButtonAnimation.swift in Sources */,
+				32072E42293DD97C0060438D /* LocalFileManager.swift in Sources */,
 				32030F5F293C719E00AAC2AE /* KryptoAppSwiftUIApp.swift in Sources */,
 				32030F97293C843200AAC2AE /* CoinModel.swift in Sources */,
 				32030F99293C886C00AAC2AE /* CoinRowsView.swift in Sources */,
