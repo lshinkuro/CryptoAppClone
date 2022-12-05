@@ -13,15 +13,20 @@ struct CoinRowsView: View {
     let showHoldingsColumn: Bool
     
     var body: some View {
-        HStack(spacing: 0){
-            leftColumn
-            Spacer()
-            if showHoldingsColumn {
-               centerColumn
-            }
-            rightColumn
+        
+        ZStack {
+            Color.black.background().ignoresSafeArea()
+            HStack(spacing: 0){
+                leftColumn
+                Spacer()
+                if showHoldingsColumn {
+                   centerColumn
+                }
+                rightColumn
+            }.cornerRadius(20)
+            .padding(.horizontal)
+            .font(.subheadline)
         }
-        .font(.subheadline)
     }
 }
 
@@ -43,19 +48,24 @@ struct CoinRowsView_Previews: PreviewProvider {
 extension CoinRowsView {
     private var leftColumn: some View {
         HStack {
-            Text(coin.symbol)
-                .font(.caption).foregroundColor(Color.cyan).frame(minWidth: 30)
-            Circle().frame(width: 30, height: 30)
+            Text(coin.symbol.uppercased())
+                .font(.caption)
+                .foregroundColor(Color.white)
+                .frame(minWidth: 30)
+            CoinImageView(coin: coin).frame(width: 30, height: 30)
             Text(coin.name)
-                .font(.headline).padding(.leading, 6).foregroundColor(Color.accentColor)
+                .font(.headline)
+                .padding(.leading, 3)
+                .foregroundColor(Color.gray)
         }
     }
     
     private var centerColumn: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .trailing){
             Text(coin.high24H.asCurrencyWith2Digit()).bold()
-            Text(coin.marketCapChangePercentage24H.asPercentString())
-        }.foregroundColor(.accentColor)
+                .foregroundColor(.accentColor)
+            Text(coin.marketCapChangePercentage24H.asPercentString()) .foregroundColor(.green)
+        }
     }
     
     private var rightColumn: some View {
@@ -64,6 +74,7 @@ extension CoinRowsView {
                 .bold()
                 .foregroundColor(.gray)
             Text(coin.priceChangePercentage24H.asPercentString()).foregroundColor(coin.priceChangePercentage24H >= 0 ? Color.red : Color.green)
-        }.frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+        }.padding(.trailing, 20)
+        .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
     }
 }

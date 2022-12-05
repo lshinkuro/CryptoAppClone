@@ -15,7 +15,7 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Color
-                .accentColor
+                .black
                 .background().ignoresSafeArea()
             VStack {
                 homeView
@@ -79,22 +79,28 @@ extension HomeView {
         List {
             ForEach(homeViewModel.allCoins) { item in
                 CoinRowsView(coin: item, showHoldingsColumn: true)
-                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .listRowSeparator(.hidden)
+                    .cornerRadius(10)
+                    .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
             }
         }
+         .scrollIndicators(.hidden)
          .listStyle(PlainListStyle())
-         .environment(\.defaultMinListRowHeight, 50)
+         .environment(\.defaultMinListRowHeight, 100)
     }
     
     private var portofolioCoinsList: some View {
         List {
             ForEach(homeViewModel.portofolioCoins) { item in
                 CoinRowsView(coin: item, showHoldingsColumn: false)
-                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .listRowSeparator(.hidden)
+                    .cornerRadius(10)
+                    .listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
             }
         }
+            .scrollIndicators(.hidden)
             .listStyle(PlainListStyle())
-            .environment(\.defaultMinListRowHeight, 50)
+            .environment(\.defaultMinListRowHeight, 100)
     }
 }
 

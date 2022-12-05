@@ -17,11 +17,6 @@ class HomeViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.allCoins.append(DeveloperPreview.instance.coin)
-            self.portofolioCoins.append(DeveloperPreview.instance.coin)
-
-        }
         addSubscriber()
     }
     
@@ -32,7 +27,9 @@ class HomeViewModel: ObservableObject {
                     return
                 }
                 self.allCoins = returnedCoins
+                self.portofolioCoins = self.allCoins.sorted{ $0.name > $1.name}
             }).store(in: &cancellables)
+        
     }
     
     func downloadData() {
