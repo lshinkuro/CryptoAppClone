@@ -15,7 +15,7 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Color
-                .black
+                .green
                 .background().ignoresSafeArea()
             VStack {
                 homeView
@@ -34,8 +34,6 @@ struct HomeView: View {
                 } else {
                     portofolioCoinsList.transition(.move(edge: .trailing))
                 }
-              
-                Spacer()
             }
         }
     }
@@ -86,7 +84,7 @@ extension HomeView {
         }
          .scrollIndicators(.hidden)
          .listStyle(PlainListStyle())
-         .environment(\.defaultMinListRowHeight, 100)
+         .environment(\.defaultMinListRowHeight, 80)
     }
     
     private var portofolioCoinsList: some View {
@@ -100,7 +98,7 @@ extension HomeView {
         }
             .scrollIndicators(.hidden)
             .listStyle(PlainListStyle())
-            .environment(\.defaultMinListRowHeight, 100)
+            .environment(\.defaultMinListRowHeight, 80)
     }
 }
 

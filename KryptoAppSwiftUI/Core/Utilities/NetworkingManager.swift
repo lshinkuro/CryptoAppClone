@@ -37,7 +37,7 @@ class NetworkingManager {
     
     static func handleUrlResponse(output : URLSession.DataTaskPublisher.Output, url: URL) throws -> Data{
         if let res = output.response as? HTTPURLResponse {
-            print("response code \(res.statusCode)")
+            print("responseCode \(res.statusCode)")
             if res.statusCode >= 500 {
                 throw NetworkingError.internalServerError
             } else if res.statusCode < 200 {

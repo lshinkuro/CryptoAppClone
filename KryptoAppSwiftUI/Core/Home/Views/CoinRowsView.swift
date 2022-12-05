@@ -15,7 +15,7 @@ struct CoinRowsView: View {
     var body: some View {
         
         ZStack {
-            Color.black.background().ignoresSafeArea()
+            Color.white.background().ignoresSafeArea()
             HStack(spacing: 0){
                 leftColumn
                 Spacer()
@@ -50,7 +50,7 @@ extension CoinRowsView {
         HStack {
             Text(coin.symbol.uppercased())
                 .font(.caption)
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.gray)
                 .frame(minWidth: 30)
             CoinImageView(coin: coin).frame(width: 30, height: 30)
             Text(coin.name)
