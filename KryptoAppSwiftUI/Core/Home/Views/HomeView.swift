@@ -19,6 +19,9 @@ struct HomeView: View {
                 .background().ignoresSafeArea()
             VStack {
                 homeView
+                
+                SearchBarView(searchText: $homeViewModel.searchText)
+                
                 HStack {
                     Text("Coins")
                     Spacer()
