@@ -12,6 +12,11 @@ struct KryptoAppSwiftUIApp: App {
     
     @StateObject private var homeViewModel: HomeViewModel = HomeViewModel()
     
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(.green)]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.green)]
+    }
+
     var body: some Scene {
         WindowGroup {
             NavigationView{

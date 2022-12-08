@@ -20,6 +20,11 @@ class DeveloperPreview {
     
     init() {}
     
+    let state1  = StatisticModel(title: "MarketcCap", value: "$12.50Bt", percentageChange: 20.4)
+    let state2  = StatisticModel(title: "Marketc24H", value: "$13.50Bn")
+    let state3  = StatisticModel(title: "Marketc24H", value: "$13.50Tr")
+
+
     let coin: CoinModel = .mock
     let homeVm = HomeViewModel()
 }
